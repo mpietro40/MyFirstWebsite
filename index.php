@@ -1,16 +1,20 @@
+<!doctype html>
 <html>
-	<head>
-		<title>My first PHP website</title>
-	</head>
-	<body>
-		<?php
-			echo "<p>Hello World!</p>";
-		?>
+    <head>
+        <meta charset="UTF-8">
+        <title>My PHP Website</title>
+    </head>
+    <body>
+   <header>
+        <h2>Login Page</h2>
+    </header>
+    <nav>    
 		<a href="login.php">Click here to login</a> <br/>
-		<a href="register.php">Click here to register</a>
-	</body>
-	<br/>
-	<h2 align="center">List</h2>
+		<a href="register.php">Click here to register</a><br/>
+
+    </nav>
+    <section>
+    	<h2 align="center">List</h2>
 	<table width="100%" border="1px">
 			<tr>
 				<th>Id</th>
@@ -33,4 +37,10 @@
 				}
 			?>
 	</table>
+	</section>
+    <aside>
+    </aside>
+    <footer>
+    </footer>    
+    </body>
 </html>
