@@ -1,8 +1,8 @@
 MyFirstWebsite
 ==============
 
-The finished product for the PHP tutorials for Beginners\n
-Modified in order to allow a book registry management\n
+The finished product for the PHP tutorials for Beginners<br>
+Modified in order to allow a book registry management<br>
 
 Qui puoi trovare tutti fli script necessari per fare un buon lavoro.\n
 L'ordine da seguire dopo aver avviato XAMPP (Apache e Mysql) e':\n
