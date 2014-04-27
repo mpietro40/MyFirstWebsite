@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<title>My first PHP website</title>
 	</head>
 	<?php
@@ -12,19 +13,24 @@
 	$user = $_SESSION['user']; //assigns user value
 	?>
 	<body>
-		<h2>Home Page</h2>
-		<p>Hello <?php Print "$user"?>!</p> <!--Displays user's name-->
-		<a href="logout.php">Click here to logout</a><br/><br/>
+		  <header>
+        		<h2>Login Page</h2>
+    			<p>Hello <?php Print "$user"?>!</p> <!--Displays user's name-->
+		  </header>
+    		<nav>    
+		<a href="logout.php">Click here to logout</a><br/>
+		</nav>
+		<section>
 		<form action="add.php" method="POST">
 			Add more to list: <input type="text" name="details"/><br/>
 			public post? <input type="checkbox" name="public[]" value="yes"/><br/>
 			<input type="submit" value="Add to list"/>
 		</form>
-		<h2 align="center">My list</h2>
+		<h2 align="center">My book list</h2>
 		<table border="1px" width="100%">
 			<tr>
 				<th>Id</th>
-				<th>Details</th>
+				<th>Title</th>
 				<th>Post Time</th>
 				<th>Edit Time</th>
 				<th>Edit</th>
@@ -49,6 +55,9 @@
 				}
 			?>
 		</table>
+		</section>
+		<footer>
+		</footer>
 		<script>
 			function myFunction(id)
 			{
