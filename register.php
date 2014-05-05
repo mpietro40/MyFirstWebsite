@@ -8,6 +8,10 @@
 		<form action="register.php" method="post">
 			Enter Username: <input type="text" name="username" required="required"/> <br/>
 			Enter Password: <input type="password" name="password" required="required" /> <br/>
+			Enter Your Name: <input type="text" name="nome" required="required"/> <br/>
+			Enter Your Surname: <input type="text" name="cognome" required="required"/> <br/>
+			Enter Birthday: <input type="date" name="nascita" required="required"/> <br/>
+			Enter Email: <input type="email" name="email" required="required"/> <br/>
 			<input type="submit" value="Register"/>
 		</form>
 	</body>
