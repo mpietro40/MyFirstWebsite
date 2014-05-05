@@ -11,7 +11,7 @@
     <nav>    
 		<a href="login.php">Click here to login</a> <br/>
 		<a href="register.php">Click here to register</a><br/>
-
+                <a href="setupDB.php"><h2 style="color:red;">TO BE USED ONLY ONE TIME IN SET UP ENVIRONMENT PHASE</h2></a><br/>
     </nav>
     <section>
     	<h2 align="center">List</h2>
