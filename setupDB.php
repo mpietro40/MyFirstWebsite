@@ -60,6 +60,11 @@ echo "<h3>Prepare DB creating table User</h3>";
 $sql="CREATE TABLE IF NOT EXISTS users (
   id int(11) NOT NULL AUTO_INCREMENT,
   username varchar(50) NOT NULL,
+  nome varchar(50) NOT NULL,
+  cognome varchar(50) NOT NULL,
+  indirizzo varchar(50) NOT NULL,
+  id_classe varchar(50) NOT NULL,
+  codice_fisc varchar(50) NOT NULL,
   password varchar(50) NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB AUTO_INCREMENT=2";
