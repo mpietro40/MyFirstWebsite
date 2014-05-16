@@ -66,6 +66,7 @@ $sql="CREATE TABLE IF NOT EXISTS users (
   id_classe varchar(50) NOT NULL,
   codice_fisc varchar(50) NOT NULL,
   password varchar(50) NOT NULL,
+  birthday DATE NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB AUTO_INCREMENT=2";
 
@@ -118,12 +119,12 @@ echo "<h2>Table list created</h2>";
 // Set up database
 echo "<h3>Insert some items</h3>";
 
-$sql="INSERT INTO list(details, date_posted, time_posted, date_edited, time_edited, public) VALUES ('Tuna', 'March 26, 2014', '13:48:18', '', '00:00:00', 'no'),".
-"('Salad', 'March 27, 2014', '04:47:49', '', '00:00:00', 'yes'),".
-"('Corn', 'March 27, 2014', '04:48:11', '', '00:00:00', 'no'),".
-"('Pasta', 'March 27, 2014', '04:48:26', '', '00:00:00', 'yes'),".
-"('Chicken', 'March 27, 2014', '04:49:23', '', '00:00:00', 'yes'),".
-"('Spaghetti', 'March 27, 2014', '04:49:49', '', '00:00:00', 'no')";
+$sql="INSERT INTO list(details, date_posted, time_posted, date_edited, time_edited, public) VALUES ('Tuna', 'March 26, 2014', '13:48:18', 'March 26, 2014', '00:00:00', 'no'),".
+"('Salad', 'March 27, 2014', '04:47:49', 'March 29, 2014', '01:00:00', 'yes'),".
+"('Corn', 'March 27, 2014', '04:48:11', 'March 30, 2014', '02:00:00', 'no'),".
+"('Pasta', 'March 27, 2014', '04:48:26', 'March 31, 2014', '03:00:00', 'yes'),".
+"('Chicken', 'March 27, 2014', '04:49:23', 'March 28, 2014', '04:00:00', 'yes'),".
+"('Spaghetti', 'March 27, 2014', '04:49:49', 'March 29, 2014', '05:00:00', 'no')";
 // stampo la query che eseguiro'
 echo "<h3>Queste sono le query di inserimento dati</h3>";
 echo "$sql"."<br>";
@@ -190,10 +191,10 @@ print "<table>";
 print "<tr>
 <th>Id</th>
 <th>Details</th>
+<th>Post Date</th>
 <th>Post Time</th>
+<th>Edit Date</th>
 <th>Edit Time</th>
-<th>Edit</th>
-<th>Delete</th>
 <th>Public Post</th>
 </tr>";
 //ciclo su tutti i record id`, `details`, `date_posted`, `time_posted`, `date_edited`, `time_edited`, `public`
