@@ -78,11 +78,12 @@ die("Error query: ".mysql_error());
 else{
 echo "<h2>Table users created</h2>";
 }
-// Set up database
+
+// Set up database insert some fake data
 echo "<h3>Insert some users</h3>";
-$sql="INSERT INTO users (username, password) VALUES ('pietro', '123456'),".
-"('paolo', '123456'),".
-"('gino', '123456')";
+$sql="INSERT INTO users (username, password,nome,cognome,indirizzo) VALUES ('pietro', '123456','paolo','rossi','via pallino, milano'),".
+"('paolo', '123456','giacomo','verdi','via pinco, roma'),".
+"('gino', '123456','roberto','bianchi','via rossi, genova')";
 // stampo la query che eseguiro'
 echo "<h3>Setting up users</h3>";
 echo "$sql"."<br>";
