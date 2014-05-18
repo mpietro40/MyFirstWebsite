@@ -58,5 +58,5 @@ echo "<h3>Close connection<h3>";
 die('Generic Error');
 }
 }//End IF
-//header("location:presence.php");
+header("location:presence.php");
 ?>
