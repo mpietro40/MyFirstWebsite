@@ -17,8 +17,13 @@ color:white;
 table{
 border-collapse:collapse;
 }
-.double{
+.pres{
   width:20px;
+  background-color:green;
+}
+.ass{
+  width:20px;
+  background-color:red;
 }
 </style>
         <title>My first PHP Website</title>
@@ -44,6 +49,32 @@ border-collapse:collapse;
       header("location: index.php"); // redirects if user is not logged in
    }
    $user = $_SESSION['user']; //assigns user value
+
+
+function writeRow($month,$day){
+    $monthNum=["09","10","11","12","01","02","03","04","05","06"];
+    $months=["September","October","November","December","January","February","March","April","May","June"];
+    $index="0";
+	for($jj=0;$jj<count($monthNum);$jj++){
+	   if($month==$monthNum[$jj])
+	     $index=$jj;
+	}
+	print "<tr><th>$months[$index]</th>";
+    for($ii=1;$ii<=31;$ii++){
+    $dayNum=["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"];
+	$index="0";
+	for($jj=0;$jj<count($dayNum);$jj++){
+	   if($day==$dayNum[$jj])
+	     $index=$jj;
+	}
+	if($ii==$index){
+        echo "<td class='pres'>$ii</td>";
+      }else{
+        echo "<td class='ass'>$ii</td>";
+	  }
+	}
+    print "</tr>";
+} //End function
    ?>
     <body>        
 <?php 
@@ -111,25 +142,16 @@ else {
 
 //Create table presence
 print "<table>";
-$matrix=
+$matrix="";
+
 while ($row=mysql_fetch_array($res)) {
-print "<tr><td>{$row[0]}</td><td>{$row[1]}</td><td>{$row[2]}</td><td>{$row[3]}</td></tr>";
+  $month=date("m",strtotime($row[1]));
+  $day=date("d",strtotime($row[1]));
+  writeRow($month,$day);
+  //print "<tr><td>{$row[0]}</td><td>{$row[1]}</td><td>{$row[2]}</td><td>{$row[3]}</td></tr>";
 }
 print "</table>";
 }
-
-// create table for all days of school
-
-print "<table>";
-$months=["September","October","November","December","January","February","March","April","May","June"];
-for($jj=0;$jj<count($months);$jj++){
-print "<tr><th>$months[$jj]</th>";
-for($ii=1;$ii<=31;$ii++){
-  echo "<td class='double'>$ii</td>";
-}
-print "</tr>";
-}
-print "</table>";
 
 // Close the connection before leaving
 mysql_close($conn);
