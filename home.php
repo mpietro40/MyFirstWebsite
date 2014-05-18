@@ -18,6 +18,7 @@
     			<p>Hello <?php Print "$user"?>!</p> <!--Displays user's name-->
 		  </header>
     		<nav>    
+		<a href="index.php">Click here for options</a><br/>
 		<a href="logout.php">Click here to logout</a><br/>
 		</nav>
 		<section>
