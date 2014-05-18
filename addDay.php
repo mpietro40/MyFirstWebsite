@@ -34,16 +34,20 @@ else{
 $row=mysql_fetch_array($res);
 $user_id=$row[0];
 }
-/*DEBUG
-$sql="SELECT CURRENT_DATE()";
+//If already registered no new record to add
+$sql="SELECT id_users FROM presence WHERE data = CURRENT_DATE() and id_users='$user_id'";
 $ok =mysql_query($sql,$conn);
 if (!$ok)
 die("<br>Unable to get data: ".mysql_error());
 else{
   $row = mysql_fetch_array($ok);
-  echo $row[0];
+  if($row[0]==$user_id)
+    header("location:presence.php");
+  //if the user is registered nothing else to do!
+  die("<br>User already registered<br> ");
+  
 }
-*///END DEBUG
+//END DEBUG
 $sql="INSERT INTO presence (id_users, data, hour_in,hour_out) VALUES ('$user_id', CURRENT_DATE(),'08:30','13:30')";
 echo $sql;
 $ok =mysql_query($sql,$conn);
